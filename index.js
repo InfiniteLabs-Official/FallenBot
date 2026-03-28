@@ -24,7 +24,7 @@ const client = new Client({
         GatewayIntentBits.DirectMessages,
         GatewayIntentBits.MessageContent
     ],
-    partials: [require('discord.js').Partials.Channel]
+    partials: [Partials.Channel]
 });
 
 client.activeApps = new Map();
@@ -43,6 +43,7 @@ for (const file of eventFiles) {
 }
 
 console.log("TOKEN EXISTS:", !!process.env.TOKEN);
+console.log("Logging in...");
 client.login(process.env.TOKEN)
   .then(() => console.log("Login attempt successful"))
   .catch(err => console.error("LOGIN ERROR:", err));
