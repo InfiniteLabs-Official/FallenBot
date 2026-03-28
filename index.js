@@ -1,4 +1,16 @@
 require('dotenv').config();
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Bot is alive");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Web server running on port ${PORT}`);
+});
+
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const fs = require('fs');
 
@@ -12,10 +24,9 @@ const client = new Client({
         GatewayIntentBits.DirectMessages,
         GatewayIntentBits.MessageContent
     ],
-    partials: [Partials.Channel]
+    partials: [require('discord.js').Partials.Channel]
 });
 
-client.events = new Map();
 client.activeApps = new Map();
 client.cooldowns = new Map();
 
