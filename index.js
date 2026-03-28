@@ -44,6 +44,12 @@ for (const file of eventFiles) {
 
 console.log("TOKEN EXISTS:", !!process.env.TOKEN);
 console.log("Logging in...");
-client.login(process.env.TOKEN)
-  .then(() => console.log("Login attempt successful"))
-  .catch(err => console.error("LOGIN ERROR:", err));
+(async () => {
+    try {
+        console.log("Attempting login...");
+        await client.login(process.env.TOKEN);
+        console.log("Login complete");
+    } catch (err) {
+        console.error("LOGIN ERROR:", err);
+    }
+})();
