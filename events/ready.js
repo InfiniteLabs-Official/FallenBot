@@ -12,7 +12,7 @@ const APPLICATION_TYPES = [
 ];
 
 module.exports = {
-    name: 'clientReady',
+    name: 'ready',
     once: true,
     async execute(client) {
 
