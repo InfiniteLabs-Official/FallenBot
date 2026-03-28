@@ -42,4 +42,5 @@ for (const file of eventFiles) {
     }
 }
 
+console.log("TOKEN EXISTS:", !!process.env.TOKEN);
 client.login(process.env.TOKEN);
