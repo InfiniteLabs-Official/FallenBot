@@ -8,6 +8,9 @@
   },
   "author": "You",
   "license": "ISC",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "discord.js": "^14.14.1",
     "dotenv": "^17.3.1",
